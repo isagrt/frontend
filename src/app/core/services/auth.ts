@@ -12,7 +12,7 @@ export class Auth {
 
   private http = inject(HttpClient);
   private router = inject(Router);
-  private apiUrl = 'http://localhost:5157/auth'
+  private apiUrl = 'http://localhost:5157/auth';
 
   login(data: LoginRequest): Observable<LoginResponse>{
     return this.http.post<LoginResponse>(`${this.apiUrl}/login`, data);

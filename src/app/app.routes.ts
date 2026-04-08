@@ -28,11 +28,11 @@ export const routes: Routes = [
                     component:Home
                 },
                 {
-                    path:'pizza',
+                    path:'pizzas',
                     component:PizzaList
                 },
                 {
-                    path:'pizza/novo',
+                    path:'pizzas/novo',
                     component:PizzaForm
                 },
                 {
