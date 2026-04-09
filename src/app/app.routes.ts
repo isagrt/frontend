@@ -36,7 +36,7 @@ export const routes: Routes = [
                     component:PizzaForm
                 },
                 {
-                    path:'pizza/editar/:id',
+                    path:'pizzas/editar/:id',
                     component:PizzaForm
                 },
             ]

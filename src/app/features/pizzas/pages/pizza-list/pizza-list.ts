@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { PizzaService } from '../../../../core/services/pizza.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -14,17 +14,24 @@ export class PizzaList {
 
   private pizzaService = inject(PizzaService);
   private router = inject(Router);
+  private cdr = inject(ChangeDetectorRef);
 
   pizzas: Pizza[] = [];
   loading = true;
 
+  ngOnInit(): void{
+    this.loadData();
+  }
+
   loadData(): void{
     this.pizzaService.getAll().subscribe({
       next: (response) => {
+        console.log(response);
         this.pizzas = response;
       },
       complete: () => {
         this.loading = false;
+        this.cdr.markForCheck();
       },
     });
   }
