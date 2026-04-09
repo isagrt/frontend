@@ -11,8 +11,10 @@
                 <label for="isGlutenFree">Sem glúten</label>
             </div>
             <div class="actions">
-                <button type="submit">Salvar</button>
-                <a routerLink="/pizzas">Cancelar</a>
+                <button type="submit" [disabled]="loading">
+                    {{ loading ? 'Salvando...' : 'Salvar' }}
+                </button>
+                <button type="button" (click)="cancelar()">Cancelar</button>
             </div>
         </form>
     </div>

@@ -1,0 +1,38 @@
+.access-denied {
+  height: 100vh;
+  width: 100%;
+  background-color: #1f2937;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  align-items: center;       
+
+  color: white;
+  text-align: center;
+}
+
+.access-denied h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.access-denied p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
+.access-denied button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.access-denied button:hover {
+  background-color: #2563eb;
+}

@@ -54,6 +54,7 @@ export class PizzaForm {
       return;
     }
  
+    this.loading = true;
     const payload = this.form.getRawValue();
  
     if (this.id){
@@ -68,5 +69,8 @@ export class PizzaForm {
     });
   }
  
+  cancelar(): void{
+    this.router.navigate(['/pizzas'])
+  }
   
 }
