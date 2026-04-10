@@ -6,6 +6,8 @@ import { authGuard } from './core/guards/auth-guard';
 import { Home } from './features/dashboard/pages/home/home';
 import { PizzaList } from './features/pizzas/pages/pizza-list/pizza-list';
 import { PizzaForm } from './features/pizzas/pages/pizza-form/pizza-form';
+import { ClienteList } from './features/clientes/pages/cliente-list/cliente-list';
+import { ClienteForm } from './features/clientes/pages/cliente-form/cliente-form';
 
 export const routes: Routes = [
 
@@ -39,6 +41,19 @@ export const routes: Routes = [
                     path:'pizzas/editar/:id',
                     component:PizzaForm
                 },
+                {
+                    path: 'clientes',
+                    component: ClienteList
+                },
+                {
+                    path: 'clientes/novo',
+                    component: ClienteForm
+                },
+                {
+                    path: 'clientes/editar/id',
+                    component: ClienteForm
+                }
+
             ]
         },
         {
