@@ -1,7 +1,8 @@
 <section class="page">
     <div class="page-header">
         <h2>Pizzas</h2>
-        <button (click)="newPizza()">Nova pizza</button>
+        <button class="new"
+        (click)="newPizza()">Nova pizza</button>
     </div>
     <div *ngIf="loading">Carregando...</div>
     <div class="table-wrapper" *ngIf="!loading">
@@ -20,8 +21,8 @@
                     <td>{{ pizza.name }}</td>
                     <td>{{ pizza.isGlutenFree ? 'Sim' : 'Não' }}</td>
                     <td class="actions">
-                        <button (click)="editPizza(pizza.id!)">Editar</button>
-                        <button (click)="deletePizza(pizza.id!)">Excluir</button>
+                        <button class="edit" (click)="editPizza(pizza.id!)">Editar</button>
+                        <button class="delete" (click)="deletePizza(pizza.id!)">Excluir</button>
                     </td>
                 </tr>
             </tbody>

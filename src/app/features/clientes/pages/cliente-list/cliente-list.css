@@ -1,0 +1,58 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.table-wrapper {
+  overflow-x: auto;
+  background: #0231740c;
+  border-radius: 16px;
+  padding: 12px;
+}
+table {
+  width:100%;
+  border-collapse: collapse;
+}
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.new{
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+    background: #1f2937;
+    color: white;
+}
+.edit{
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+    background-color: #1f29373d;
+}
+.delete{
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+    background: #8a0f0f;
+    color: white;
+}
+

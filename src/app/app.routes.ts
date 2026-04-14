@@ -12,16 +12,16 @@ import { ClienteForm } from './features/clientes/pages/cliente-form/cliente-form
 export const routes: Routes = [
 
         {path: '', redirectTo: 'login', pathMatch:'full'},
-        {   
-            path:'login', 
+        {
+            path:'login',
             component: Login
         },
-        {   
-            path:'acesso-negado', 
+        {
+            path:'acesso-negado',
             component: AccessDenied
         },
-        {   
-            path:'', 
+        {
+            path:'',
             component: MainLayout,
             canActivate: [authGuard],
             children: [
@@ -50,7 +50,7 @@ export const routes: Routes = [
                     component: ClienteForm
                 },
                 {
-                    path: 'clientes/editar/id',
+                    path: 'clientes/editar/:id',
                     component: ClienteForm
                 }
 
