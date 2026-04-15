@@ -22,13 +22,13 @@ export class Login {
 
   loading = false;
   errorMessage = '';
-  
+
 
   form =this.fb.group({
     username: ['', [Validators.required]],
     password: ['', [Validators.required]]
   });
-  
+
   submit(): void{
     if(this.form.invalid){
       this.form.markAllAsTouched();
@@ -37,7 +37,7 @@ export class Login {
     this.loading = true;
     this.errorMessage = '';
     this.cdr.markForCheck();
-    
+
     this.authService.login(this.form.getRawValue() as {username: string, password:string}).subscribe({
       next: (response) =>{
         this.authService.saveToken(response.token);
@@ -53,6 +53,10 @@ export class Login {
         this.cdr.markForCheck();
       }
     });
-  
+
   }
+
+  irParaCadastro() {
+  this.router.navigate(['/cadastro']);
+}
 }

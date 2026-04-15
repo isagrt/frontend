@@ -18,7 +18,7 @@ export class AccessDenied {
   private auth = inject(Auth);
 
   voltar(): void {
-  if (!this.auth.isAutenticated()) { // se nao ta autenticado volta pro login
+  if (!this.auth.isAuthenticated()) { // se nao ta autenticado volta pro login
     this.router.navigate(['/login']);
     return;
   }

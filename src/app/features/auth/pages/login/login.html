@@ -15,6 +15,11 @@
         {{ loading ? 'Entrando...' : 'Entrar' }}
 </button>
 <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+<div class="link-cadastro">
+  <span>Não tem conta?</span>
+  <a (click)="irParaCadastro()">Cadastre-se</a>
+</div>
 </form>
 </div>
 </div>

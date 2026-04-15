@@ -9,30 +9,37 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class Auth {
-
   private http = inject(HttpClient);
   private router = inject(Router);
   private apiUrl = 'http://localhost:5157/auth';
 
-  login(data: LoginRequest): Observable<LoginResponse>{
-    return this.http.post<LoginResponse>(`${this.apiUrl}/login`, data);
-
+  hasUser(): Observable<{ exists: boolean }> {
+    return this.http.get<{ exists: boolean }>(`${this.apiUrl}/has-user`);
   }
 
+  register(data: any): Observable<any> {
+  return this.http.post(`${this.apiUrl}/register`, data, {
+    responseType: 'text' as 'json'
+  });
+}
 
-  saveToken(token: string): void{
+  login(data: LoginRequest): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.apiUrl}/login`, data);
+  }
+
+  saveToken(token: string): void {
     localStorage.setItem('token', token);
   }
 
-  getToken(): string | null{
+  getToken(): string | null {
     return localStorage.getItem('token');
   }
 
-  isAutenticated(): boolean{
+  isAuthenticated(): boolean {
     return !!this.getToken();
   }
 
-  logout(): void{
+  logout(): void {
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }
