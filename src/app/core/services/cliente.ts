@@ -10,6 +10,8 @@ export class ClienteService {
   private http = inject(HttpClient);
   private apiUrl = 'http://localhost:5157/cliente'
 
+
+
   getAll(): Observable<Cliente[]>{
     return this.http.get<Cliente[]>(this.apiUrl);
   }
